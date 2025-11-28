@@ -1,0 +1,377 @@
+/* ===========================
+   RELOAD GAMES - THEME (LIGHT/DARK)
+   =========================== */
+
+/* Core variables (dark default) */
+:root{
+  --bg: #0b0f14;
+  --panel: #10161a;
+  --muted: #9aa6b2;
+  --accent: #58a6ff;
+  --purple: #c27fff;
+  --green-1: #238636;
+  --green-2: #2ea043;
+  --table-head: #1b232c;
+  --card-border: #21262d;
+  --text: #e6edf3;
+  --surface: rgba(16,23,30,0.95);
+  --shadow: rgba(0,0,0,0.45);
+  --glass: rgba(255,255,255,0.02);
+}
+
+/* ===============================
+   LIGHT THEME — estilo GOV (simples, legível)
+   =============================== */
+
+.theme-light {
+  --bg: #ffffff;
+  --panel: #f4f4f4;
+  --text: #1a1a1a;
+  --muted: #555555;
+  --card-border: #cfcfcf;
+  --accent: #1351b4;      /* Azul GOV */
+  --purple: #1351b4;
+  --green-1: #0c7a4f;
+  --green-2: #0d8a57;
+  --table-head: #e6e6e6;
+  --surface: #ffffff;
+  --shadow: transparent;
+  --glass: #ffffff;
+}
+
+/* Corrige o fundo no modo claro */
+.theme-light body {
+    background: #ffffff !important;
+}
+
+/* GLOBAL RESET */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* NAVBAR */
+.navbar{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 36px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+  border-bottom:1px solid var(--card-border);
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:50;
+}
+.nav-left{display:flex;align-items:center;gap:18px}
+.logo{
+  display:flex;align-items:center;gap:10px;color:var(--accent);font-weight:700;font-size:18px;
+}
+.logo .icon{
+  width:28px;height:28px;border-radius:6px;background:linear-gradient(180deg,#15202b,#0b1620);
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+  box-shadow:0 6px 14px var(--shadow);
+}
+.nav-links{display:flex;gap:18px;color:var(--text);font-size:14px}
+.nav-right{display:flex;align-items:center;gap:16px;color:var(--text)}
+.nav-links > div { opacity: 0.85; }
+
+/* Theme toggle button */
+.theme-toggle{
+  width:44px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+  background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  color:var(--text);
+}
+
+/* PAGE container */
+.page {
+  max-width:1100px;
+  margin:110px auto 60px;
+  padding:0 20px;
+}
+
+/* HERO CARD */
+.hero {
+  background: var(--panel);
+  border-radius:14px;
+  padding:36px;
+  border:1px solid var(--card-border);
+  box-shadow: 0 14px 40px var(--shadow);
+  position:relative;
+}
+.hero .title{
+  text-align:center;
+  font-size:40px;
+  color:var(--purple);
+  margin:6px 0 8px;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  font-weight:700;
+}
+.hero .subtitle{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:26px;
+  font-size:14px;
+}
+
+/* SEARCH ROW */
+.search-row{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:center;
+  margin-top:14px;
+}
+.search-box{
+  width:70%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:var(--panel);
+  border:1px solid var(--card-border);
+  padding:12px 14px;
+  border-radius:10px;
+}
+.search-box input{
+  flex:1;
+  background:transparent;
+  border:0;
+  color:var(--text);
+  font-size:14px;
+  outline:none;
+}
+
+/* Action button (Novo Jogo) */
+.action-btn{
+  padding:10px 16px;
+  background:linear-gradient(135deg,var(--green-1),var(--green-2));
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  border:0;
+  cursor:pointer;
+}
+
+/* TABLE */
+.table-card{ margin-top:28px; background:transparent; border-radius:12px; }
+.table-wrap{
+  background:var(--panel);
+  border-radius:10px;
+  padding:8px;
+  border:1px solid var(--card-border);
+  box-shadow: 0 8px 30px var(--shadow);
+  overflow:hidden;
+}
+
+table.game-table{ width:100%; border-collapse:collapse; min-width:800px; }
+.game-table thead th{
+  text-align:left;
+  padding:14px 18px;
+  color:var(--accent);
+  text-transform:uppercase;
+  font-size:12px;
+  background:var(--table-head);
+}
+.game-table td{
+  padding:16px 18px;
+  color:var(--text);
+  font-size:14px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.game-row:hover{ background: rgba(255,255,255,0.05); }
+
+/* ACTION BUTTONS */
+.action-buttons {
+  display:flex;
+  gap:8px;
+}
+.btn-edit, .btn-delete {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+  border:0;
+  text-decoration:none;
+}
+.btn-edit {
+  background: rgba(88,166,255,0.15);
+  color: var(--accent);
+}
+.btn-delete {
+  background: rgba(255,90,90,0.12);
+  color: #ff6b6b;
+}
+
+/* BADGES */
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:12px;
+  background:var(--glass);
+  color:var(--muted);
+}
+
+/* PRICE */
+.price{ color:#2ad07a; font-weight:700; }
+
+/* RECENT CARDS */
+.section-title{ display:flex; align-items:center; gap:12px; margin:34px 0 14px; }
+.section-title .bar{ width:4px;height:22px;background:var(--accent);border-radius:3px; }
+
+.recent-grid{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.recent-card{
+  width:180px;
+  height:260px;
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--panel);
+  border:1px solid var(--card-border);
+  box-shadow:0 6px 20px var(--shadow);
+  position:relative;
+}
+
+.recent-card img.recent-cover{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.92;
+}
+
+.recent-card .name{
+  position:absolute;
+  bottom:0;
+  left:0; right:0;
+  padding:10px;
+  text-align:center;
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  font-size:14px;
+}
+
+/* FORM */
+.form-box {
+  background: var(--panel);
+  padding: 24px;
+  border-radius: 12px;
+  border:1px solid var(--card-border);
+}
+label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  background: var(--glass);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+}
+
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  background:#fff;
+  color:#1a1a1a;
+  border:1px solid #cfcfcf;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:70px;
+  padding:30px 0;
+  color:var(--muted);
+  border-top:1px solid var(--card-border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:13px;
+}
+.socials a { color:var(--muted); margin-left:12px; }
+.socials a:hover { color:var(--accent); }
+
+/* COVER IMAGE */
+.game-cover{
+  width:52px;
+  height:52px;
+  border-radius:10px;
+  object-fit:cover;
+  border:1px solid var(--card-border);
+}
+
+/* SELECT DROPDOWN FIX */
+select option {
+    background-color: #0f1419 !important;
+    color: #e6edf3 !important;
+}
+select option:hover{ background:#1b2633 !important; }
+
+.theme-light select option {
+    background-color:#fff !important;
+    color:#1a1a1a !important;
+}
+.theme-light select option:hover{
+    background-color:#ececec !important;
+    color:#000 !important;
+}
+.btn-relatorio {
+  float: right; 
+  background: #fff;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 20px;
+  border: 2px solid #ccc;
+  transition: 0.3s;
+}
+
+.btn-relatorio:hover {
+  background: #f0f0f0;
+}
+/* Container que empurra o botão para a direita */
+.relatorio-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 10px 20px 0 0;
+}
+
+/* Botão branco igual ao botão do usuário */
+.btn-relatorio {
+  background: #ffffff;
+  color: #000000;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-relatorio:hover {
+  background: #f0f0f0;
+  cursor: pointer;
+}
